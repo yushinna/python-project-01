@@ -10,7 +10,6 @@ import random
 def start_game(highscore=999):
     answer = random.randint(1, 10)
     tries = 0
-    highscore = highscore
 
     while True:
         try:
@@ -33,7 +32,8 @@ def start_game(highscore=999):
                     highscore = tries
                 while True:
                     try:
-                        retry = input("Would you like to play again? [y]es/[n]o:  ")
+                        retry = input(
+                            "Would you like to play again? [y]es/[n]o:  ")
                         if retry.lower() != "y" and retry.lower() != "yes" and retry.lower() != "n" and retry.lower() != "no":
                             raise ValueError
                     except ValueError:
